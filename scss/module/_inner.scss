@@ -1,0 +1,13 @@
+@use "../global" as *;
+.inner {
+  width: 100%;
+  padding-right: rem(strip-unit($padding-sp));
+  padding-left: rem(strip-unit($padding-sp));
+  margin-right: auto;
+  margin-left: auto;
+  @include mq('md') {
+    max-width: initial;
+    padding-right:initial;
+    padding-left:initial;
+  }
+}

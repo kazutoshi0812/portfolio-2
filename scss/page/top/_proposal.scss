@@ -1,0 +1,76 @@
+@use "../../global" as *;
+
+.section-container-proposal {
+    background-color: #fbf9f7;
+    margin-top: 80px;
+    padding: 20px 15px 30px;
+}
+
+// スクロールでフェードインする
+.section-contents-description {
+    display: flex;
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+    font-weight: $medium;
+    justify-content: center;
+    opacity: 0; // 初期状態で不透明度を0に設定
+    text-align: center;
+    transform: translateY(-100px); // 初期状態で下にずらしておく
+    transition: opacity 3s, transform 2s; // 透明度と位置の変化にかかる時間を設定
+}
+.fadeIn {
+    opacity: 1; // 完全に不透明に
+    transform: translateY(0); // 元の位置に戻す
+}
+
+.proposal-list {
+    background-color: $back;
+    border: solid 2px $main-accentstrong;
+    color: $main-color;
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    gap: 35px;
+    margin: 50px auto;
+    max-width: 60%;
+    opacity: 0; // 初期状態で不透明度を0に設定
+    padding: 40px;
+    transform: translateY(100px); // 初期状態で下にずらしておく
+    transition: opacity 3s, transform 2s; // 透明度と位置の変化にかかる時間を設定
+}
+
+// スクロール時のフェードインと上への移動を実現するためのクラス
+.fadeIn {
+    opacity: 1; // 完全に不透明に
+    transform: translateY(0); // 元の位置に戻す
+}
+
+@media (max-width: 768px) {
+    .proposal-list {
+        margin: 30px auto 10px;
+        min-width: 100%;
+        padding: 10px;
+    }
+    .proposal-item {
+        display: flex;
+        justify-content: center;
+    }
+}
+.proposal-item {
+    align-items: center;
+    display: flex;
+    font-size: clamp(1rem, 2vw, 1.75rem);
+    margin: 0 auto;
+    width: 80%;
+}
+.proposal-image {
+    height: 30px;
+    margin-right: 15px;
+    width: 30px;
+}
+.section-contents-sub-description {
+    text-align: center;
+    .contents-sub-description {
+        font-size: clamp(1rem, 2vw, 1.75rem);
+        margin: 30px 0 0;
+    }
+}

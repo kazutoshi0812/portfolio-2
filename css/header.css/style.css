@@ -1,0 +1,388 @@
+/* A Modern CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  border-style: solid;
+  box-sizing: border-box;
+  border-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+input,
+button,
+select,
+textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+input[type=submit],
+input[type=button],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  color: #000000;
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 4.2666666667vw;
+  }
+}
+@media (max-width: 787px) {
+  html {
+    font-size: 4.2666666667vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 1.3194444444vw;
+  }
+}
+@media (min-width: 1440px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  a {
+    transition: 0.2s ease-in-out;
+  }
+}
+
+main {
+  overflow: hidden;
+}
+
+header {
+  height: 3.125rem;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+@media screen and (min-width: 768px) {
+  header {
+    height: 5rem;
+    z-index: 60;
+  }
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header-wrapper__logo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 11.5625rem;
+  margin-top: -0.3125rem;
+  margin-left: 0.4375rem;
+}
+@media screen and (min-width: 768px) {
+  .header-wrapper__logo {
+    width: 35.625rem;
+    margin-top: -0.125rem;
+    margin-left: 1.5625rem;
+  }
+}
+
+.header-wrapper__logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.header__hamburger {
+  position: relative;
+  z-index: 30;
+}
+@media screen and (min-width: 768px) {
+  .header__hamburger {
+    display: none;
+  }
+}
+
+.header__right {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@media screen and (min-width: 768px) {
+  .header__right {
+    display: block !important;
+    position: static;
+  }
+}
+
+.header__tel {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header__tel {
+    display: block;
+    z-index: 30;
+    margin-top: 0rem;
+    margin-right: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__tel-number {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__tel-number-image {
+    width: 0.9375rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__tel-number-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__tel-number-text {
+    margin-top: 0.3125rem;
+    margin-left: 0.625rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.21;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__tel-available {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__tel-available p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.4483333333;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__tel-available p:nth-of-type(2) {
+    margin-left: 0.75rem;
+  }
+}
+
+footer {
+  background-color: #fff1d9;
+  margin-top: 0.3125rem;
+  padding-top: 3.4375rem;
+  padding-bottom: 1.5625rem;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    padding-top: 3.25rem;
+    padding-bottom: 5.625rem;
+  }
+}
+
+.footer-wrapper {
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .footer-wrapper {
+    max-width: 75rem;
+  }
+}
+
+.footer-wrapper__text {
+  margin: 0 auto;
+  max-width: 19.375rem;
+}
+@media screen and (min-width: 768px) {
+  .footer-wrapper__text {
+    max-width: 32.5rem;
+    margin: 0 auto;
+  }
+}
+
+.footer-wrapper__text p {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.4285714286;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.footer-wrapper__textpc {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-wrapper__textpc p {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.9230769231;
+    white-space: nowrap;
+    font-weight: 700;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+
+.footer-wrapper__logo {
+  margin: 0 auto;
+  width: 65vw;
+}
+@media screen and (min-width: 768px) {
+  .footer-wrapper__logo {
+    margin-top: 2.8125rem;
+    width: 26vw;
+  }
+}
+
+.footer-wrapper__logo img {
+  width: 100%;
+}
+
+.footer-wrapper__bottom {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 4.8;
+  text-align: center;
+  letter-spacing: 0.09em;
+}
+@media screen and (min-width: 768px) {
+  .footer-wrapper__bottom {
+    font-size: 0.75rem;
+    line-height: 4;
+    letter-spacing: 0.13em;
+  }
+}
+
+.inner {
+  width: 100%;
+  padding-right: 1.4375rem;
+  padding-left: 1.4375rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (min-width: 768px) {
+  .inner {
+    max-width: initial;
+    padding-right: initial;
+    padding-left: initial;
+  }
+}
+
+.test {
+  margin-top: 6.25rem;
+  background-color: plum;
+  font-size: 1rem;
+  color: red;
+}
+@media screen and (min-width: 768px) {
+  .test {
+    font-size: 3.125rem;
+    color: green;
+  }
+}
+
+.u-desktop {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .u-desktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .u-mobile {
+    display: none;
+  }
+}

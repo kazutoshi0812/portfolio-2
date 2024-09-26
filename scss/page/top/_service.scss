@@ -1,0 +1,81 @@
+@use "../../global" as *;
+
+.section-service {
+    margin-bottom: 100px;
+}
+.service {
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-name: fadeLeftAnime;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-bottom: 50px;
+    opacity: 0; // 初期状態で不透明度を0に設定
+    overflow: hidden;
+    transform: translateY(100px); // 初期状態で下にずらしておく
+    transition: opacity 3s, transform 2s; // 透明度と位置の変化にかかる時間を設定
+}
+.service-sub-description {
+    margin-bottom: .5em;
+}
+.fadeIn {
+    opacity: 1; // 完全に不透明に
+    transform: translateY(0); // 元の位置に戻す
+}
+
+
+.service-img {
+    width: 400px;
+}
+.service:nth-child(2) {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.service-caption {
+    padding: 25px 0;
+    width: 40vw;
+    .service-caption-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    .service-description {
+        line-height: 1.75em;
+    }
+}
+
+@media (max-width: 768px) {
+    .service {
+        display: block;
+        margin-top: 30px;
+    }
+    .service:nth-child(2) {
+        display: block;
+    }
+    .service > .service-img {
+        margin: 10px auto;
+        width: 80%;
+    }
+    .service-caption {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .service-caption-title {
+        display: flex;
+        justify-content: center;
+    }
+}
+.sub-description-wrapper {
+    margin-top: 50px;
+    text-align: center;
+}
+.service-sub-description:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .sub-description-wrapper .service-sub-description {
+        padding: 5px 30px;
+    }
+}

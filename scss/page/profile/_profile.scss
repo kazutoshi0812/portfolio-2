@@ -1,0 +1,141 @@
+@use "../../global" as *;
+
+.about-section {
+    background-color: #ffecc7;
+    padding: 0 0 60px 0;
+}
+
+
+.profile-headline {
+    color: $main-color;
+    font-family: "'Lora', serif, Hiragino Mincho Pro", "Lato", sans-serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: .6rem;
+    margin-bottom: 10px;
+    opacity: 0; // 初期状態で不透明度を0に設定
+    overflow: hidden;
+    padding: 30px 60px 0;
+    position: relative;
+    transform: translateX(-100px); // 初期状態で下にずらしておく
+    transition: opacity 3s, transform 2s; // 透明度と位置の変化にかかる時間を設定
+}
+
+.fadeIn {
+    opacity: 1; // 完全に不透明に
+    transform: translateX(0); // 元の位置に戻す
+}
+
+
+.section-headline__line, .section-service-headline-line {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(176,184,189,1) 50%, rgba(35,81,91,1) 100%);
+    height: 2px;
+    margin: 0 0 60px 40px;
+    width: 350px;
+}
+
+@media (max-width: 768px) {
+    .section-profile-about {
+        padding-top: 50px;
+    }
+    .section-headline {
+        display: flex;
+        justify-content: center;
+    }
+    .section-headline__line, .section-service-headline-line {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .about-caption__self-introduction {
+        justify-content: center;
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    .my-image {
+        filter: drop-shadow(10px 10px 10px rgb(117, 129, 138));
+        height: 30vh;
+        margin: 50px;
+        transition: transform .5s ease-in-out;
+        width: auto;
+    }
+}
+.about .my-image:hover {
+    transform: scale(1.2);
+}
+
+.about-caption {
+    padding: 20px 40px;
+    &__self-introduction {
+        display: flex;
+        font-size: 2.5rem;
+        font-weight: bold;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    &__my-name {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .about-caption__text {
+        margin: 20px 0;
+    }
+    .about-description__text {
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        display: block;
+    }
+    .about > .my-image {
+        margin: 0 auto;
+        pointer-events: none;
+    }
+}
+
+.about-button {
+    align-items: center;
+    background-color: #fafafa;
+    border: 2px solid #454545;
+    border-radius: 20px;
+    box-shadow: 0 6px 0 -2px rgb(63, 65, 64);
+    color: #333333;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    justify-content: center;
+    line-height: 1;
+    margin-inline: auto;
+    margin-top: 30px;
+    text-decoration: none;
+    transition: .3s;
+    width: 200px;
+    &:hover {
+        box-shadow: 0 0 #ffffff;
+        transform: translateY(1px);
+    }
+}
+.about-button {
+    display: flex;
+}
+.about-button::after {
+    border-bottom: solid 1px;
+    border-right: solid 2px;
+    content: "";
+    height: 6px;
+    margin-left: 15px;
+    transform: skew(45deg);
+    width: 20px;
+}
+
+.future-img {
+    display: flex;
+}

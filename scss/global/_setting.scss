@@ -1,0 +1,63 @@
+@use 'sass:math';
+
+// インナー幅設定(pxのまま)
+$inner: 1200px;
+
+// 余白
+$padding-pc: 120px;
+$padding-sp: 23px;
+
+// font-family※必要に応じて適宜変えましょう
+$base-font:'Noto Sans JP', sans-serif;
+$en-font: 'Noto Sans', sans-serif;
+$menu-font:'Arial';
+$num-font: 'Montserrat', sans-serif;
+$tel-font:'Inter', sans-serif;
+$skill-font:'SnellRoundhand Script';
+$title-font: "Times New Roman";
+
+// font-weight
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$exbold:800;
+
+body {
+  font-family: $base-font;
+  font-weight: $regular;
+}
+
+// 色指定※必要に応じて適宜変えましょう
+$mono-color:#333;
+$main-color:#583327;
+$main-base:#fff1d9;
+$main-accentstrong:#f08336;
+$main-blue:#5ccdfa;
+$white:#fff;
+$back:#fff1d9;
+body {
+  color: $mono-color;
+}
+
+//ブレイクポイント
+$breakpoints: (
+  sm: 600,
+  md: 768,
+  lg: 1024,
+  xl: 1440,
+);
+
+// メディアクエリ
+$mediaquerys: (
+  sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
+  lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
+  xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
+);
+
+// メディアクエリを "@include mq(){}" で書くことができる
+@mixin mq($mediaquery: md) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}

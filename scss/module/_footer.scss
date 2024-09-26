@@ -1,0 +1,122 @@
+@use "../global" as *;
+
+.footer {
+    align-items: center;
+    background-color: $main-base;
+    display: flex;
+    height: 200px;
+    justify-content: space-evenly;
+    padding: 0 50px;
+}
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+.footer-logo-image {
+    height: 100px;
+    width: 200px;
+}
+@media (max-width: 768px) {
+    .footer-logo-image {
+        height: 80px;
+        margin-top: 20px;
+        width: 120px;
+    }
+}
+
+.footer-wrapper {
+    height: 80%;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    width: 500px;
+}
+@media (max-width: 768px) {
+    .footer-wrapper {
+        width: 100%;
+    }
+}
+
+.footer-contact-container {
+    align-items: center;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    & > a {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        transition: all .3s ease-in-out;
+    }
+}
+@media (max-width: 768px) {
+    .footer-contact-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.footer-contact-container > a:hover {
+    transform: scale(1.2);
+}
+.list-sns {
+    align-items: center;
+    display: flex;
+    gap: 30px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    width: 250px;
+}
+@media (max-width: 767px) {
+    .list-sns {
+        justify-content: center;
+        min-width: 250px;
+    }
+}
+
+.footer-sns-img {
+    transition: transform .3s ease-in-out;
+}
+.footer-sns-img:hover {
+    transform: scale(1.2);
+}
+
+.footer-logo-text {
+    margin: 0 auto 20px;
+    width: 50%;
+}
+@media (max-width: 768px) {
+    .footer-logo-text {
+        width: 80%;
+    }
+}
+
+.footer-logo-text:hover {
+    background-color: $main-color;
+    border-radius: 5px;
+    color: $white;
+    transition: all .3s ease-in-out;
+}
+.footer-logo-text > a {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.footer-copy {
+    background-color: $main-base;
+    border-top: solid 1px #000000;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+    .footer-copy {
+        padding: 20px;
+    }
+}
+
+.footer-line {
+    margin: 0;
+}

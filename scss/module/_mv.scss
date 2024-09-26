@@ -1,0 +1,76 @@
+@use "../global" as *;
+
+.main-visual__image {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.mv-custom-shape {
+    bottom: 0;
+    left: 0;
+    line-height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.mv-custom-shape svg {
+    display: block;
+    height: auto;
+    position: relative;
+    transform: rotateY(180deg);
+    width: calc(145% + 1.3px);
+}
+
+.mv-custom-shape .shape-fill {
+    fill: #ffffff;
+}
+
+.section-main-visual > strong {
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-name: fadeInAnime;
+    color: #ffffff;
+    display: block;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: bold;
+    left: 30%;
+    letter-spacing: .15em;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 3;
+    @keyframes fadeInAnime {
+        from {
+            opacity: 0;
+        } to {
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .section-main-visual {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-main-visual {
+        margin-bottom: 30px;
+        overflow: hidden;
+        top: 10vh;
+    }
+    .section-main-visual > strong {
+        left: 50%;
+        position: absolute;
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+}

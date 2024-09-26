@@ -1,0 +1,129 @@
+@use "../../global" as *;
+
+.profile-headline {
+    color: $main-color;
+    font-family: "'Lora', serif, Hiragino Mincho Pro", "Lato", sans-serif;
+    font-size: clamp(1.75rem, 6vw, 3rem);
+    letter-spacing: .6rem;
+    margin-bottom: 10px;
+    opacity: 0; // 初期状態で不透明度を0に設定
+    overflow: hidden;
+    padding: 30px 60px 0;
+    position: relative;
+    transform: translateX(-100px); // 初期状態で下にずらしておく
+    transition: opacity 3s, transform 2s; // 透明度と位置の変化にかかる時間を設定
+}
+
+.fadeIn {
+    opacity: 1; // 完全に不透明に
+    transform: translateX(0); // 元の位置に戻す
+}
+
+
+.profile-headline__line {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(176,184,189,1) 50%, rgba(35,81,91,1) 100%);
+    height: 2px;
+    margin: 0 0 0 40px;
+    width: 500px;
+}
+
+@media (max-width: 768px) {
+    .profile-headline, .section-headline, .section-future__headline {
+        display: block;
+        text-align: center;
+    }
+    .profile-headline__line, .profile-service-headline-line {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+    .about-caption__self-introduction {
+        justify-content: center;
+    }
+    .profile-headline span {
+        display: block;
+    }
+    .section-headline span {
+        display: block;
+    }
+}
+
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    .my-image {
+        filter: drop-shadow(10px 10px 10px rgb(117, 129, 138));
+        height: 30vh;
+        margin: 50px;
+        transition: transform .5s ease-in-out;
+        width: auto;
+    }
+}
+.profile-inner .my-image:hover {
+    transform: scale(1.2);
+}
+
+.profile-text__wrapper {
+    max-width: 500px;
+    padding: 20px;
+}
+.profile-text__my-name {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: bold;
+}
+.profile-text__my-name__primary {
+    display: block;
+    font-size: clamp(1rem, 2vw, 1.75rem);
+    margin: 0;
+}
+.profile-text__jobs {
+    font-size: 1.5rem;
+    padding-left: 1em;
+}
+.profile-table {
+    margin-top: 10px;
+}
+.profile-list__title {
+    background-color: #f6eae2;
+    border: 2px #dd8365;
+    border-radius: 10px 0 0 20px;
+    border-style: none solid solid none;
+    display: flex;
+    font-weight: bold;
+    justify-content: flex-end;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.profile-list__title, .profile-list__item {
+    font-size: 1.2rem;
+    margin: 4px;
+    padding: 5px 10px 5px 16px;
+}
+.profile-description__text {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .about {
+        display: block;
+    }
+    .about > .my-image {
+        margin: 0 auto;
+    }
+    .profile-text__my-name {
+        justify-content: center;
+        text-align: center;
+    }
+    .profile-text__jobs {
+        padding: 0;
+        text-align: center;
+    }
+    .profile-description__text {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+}

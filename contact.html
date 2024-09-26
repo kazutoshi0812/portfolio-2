@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
+    <!-- meta情報 -->
+        <title>K's coding Contact</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+    <!-- ogp -->
+        <meta property="og:title" content="">
+        <meta property="og:type" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <meta property="og:site_name" content="">
+        <meta property="og:description" content="">
+    <!-- ファビコン -->
+        <link rel="shortcut icon" href="" type="image/x-icon">
+    <!-- css -->
+        <link rel="stylesheet" href="./css/style.css">
+    <!-- GoogleFont -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header class="header">
+        <div class="contact-header-logo">
+            <a href="index.html">
+                <img class="header-logo-image" src="./img/my_logo.svg" alt="ロゴ画像">
+            </a>
+        </div>
+    </header>
+    <!-- contact -->
+    <section class="section-contact" id="contact">
+        <div class="section-contents">
+            <h1 class="section-contacts__headline">
+                Contact Me!
+            </h1>
+        </div>
+        <div class="section-contact__wrapper">
+            <form class="form" action="">
+                <table class="form-table">
+                    <tr>
+                        <th>
+                            <label for="menu">お問い合わせ内容</label>
+                        </th>
+                        <td>
+                            <select class="select" id="menu">
+                                <option hidden>メニューを選択してください。</option>
+                                <option value="menu-1">自社HP　新規作成</option>
+                                <option value="menu-2">自社HP　修正依頼</option>
+                                <option value="menu-3">その他ご相談</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="name">会社名</label>
+                        </th>
+                        <td>
+                            <input class="input" type="text" id="company-name" name placeholder="会社名を入力">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="name">お名前</label>
+                        </th>
+                        <td>
+                            <input class="input" type="text" id="name" name placeholder="氏名を入力">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="email">
+                                Email
+                            </label>
+                        </th>
+                        <td>
+                            <input class="input" type="email" id="email" name placeholder="Text@sample.com">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="detale">メッセージ</label>
+                        </th>
+                        <td>
+                            <textarea class="textarea" id="detale" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+
+            <div class="form-button">
+                <button class="button-submission" type="submit">
+                    Submit
+                </button>
+            </div>
+        
+    </section>
+</body>
+</html>

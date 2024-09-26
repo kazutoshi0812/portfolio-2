@@ -1,0 +1,122 @@
+@use "../../global" as *;
+
+.section-future__headline {
+    color: $main-color;
+    font-family: "'Lora', serif, Hiragino Mincho Pro", "Lato", sans-serif;
+    font-size: clamp(1rem, 5vw, 3rem);
+    letter-spacing: .6rem;
+    margin-bottom: 10px;
+    opacity: 0; // 初期状態で不透明度を0に設定
+    overflow: hidden;
+    padding: 30px 50px 0;
+    position: relative;
+    transform: translateX(-100px); // 初期状態で下にずらしておく
+    transition: opacity 3s, transform 2s; // 透明度と位置の変化にかかる時間を設定d
+}
+
+.fadeIn {
+    opacity: 1; // 完全に不透明に
+    transform: translateX(0); // 元の位置に戻す
+}
+
+.section-future {
+    margin-bottom: 50px;
+}
+
+.section-future__line {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(176,184,189,1) 50%, rgba(35,81,91,1) 100%);
+    height: 2px;
+    margin: 0 0 60px 40px;
+    width: 500px;
+}
+
+@media (max-width: 768px) {
+    .section-future__headline {
+        display: flex;
+        justify-content: center;
+    }
+    .section-future__line {
+        margin: 0 auto;
+        margin-bottom: 50px;
+        width: 70%;
+    }
+}
+.future {
+    background-color: #fff5e0;
+    box-shadow: 10px 10px 10px #a7a6a6;
+    min-height: 100%;
+    opacity: 0; // 初期状態で不透明度を0に設定
+    padding: 20px;
+    transform: translateY(-100px); // 初期状態で下にずらしておく
+    transition: opacity 3s, transform 2s; // 透明度と位置の変化にかかる時間を設定
+    .future-headline-number {
+        font-size: clamp(1rem, 3vw, 2rem);
+        font-weight: bold;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .future-headline {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .future-description {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        padding: 0 10px;
+        text-align: center;
+    }
+}
+.fadeIn {
+    opacity: 1; // 完全に不透明に
+    transform: translateY(0); // 元の位置に戻す
+}
+
+@media (max-width: 768px) {
+    .future .future-img {
+        margin: 10px auto;
+    }
+}
+.future-img__icon {
+    display: flex;
+    margin: 0 15px;
+}
+.grid-item {
+    list-style: none;
+}
+.grid.grid-col-4 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    /* height: 100%; */
+    margin: 30px;
+}
+
+@media (min-width: 1024px) {
+    .grid.grid-col-4 {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 1023px) {
+    .grid.grid-col-4 {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin: 0 auto;
+        padding: 0;
+        width: 90%;
+    }
+}
+
+.future-skills__img {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+.future-skills__img img {
+    max-width: 35%;
+}
+span {
+    margin: auto 15px;
+}

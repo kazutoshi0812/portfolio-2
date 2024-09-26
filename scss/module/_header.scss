@@ -1,0 +1,137 @@
+@use "../global" as *;
+
+.header {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+@media (max-width: 992px) {
+    .header {
+        height: 80px;
+    }
+}
+.header-logo-image {
+    width: 120px;
+}
+.header-navlist {
+    display: flex;
+    font-size: clamp(1rem, 2vw, 2rem);
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+}
+.header-navitem__dropdown {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.header-navitem > a {
+    border-bottom: 2px solid transparent;
+    display: block;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: bold;
+    padding: 5px 20px;
+    text-decoration: none;
+    transition: border-color .3s;
+}
+.header-navlist.open li a {
+    font-size: 2rem;
+}
+.header-navitem > a:hover {
+    border-bottom: 2px solid #2eaafd;
+    color: #2eaafd;
+    transition: .3s;
+}
+
+.header-navlist.open {
+    padding: 0;
+    right: 0;
+}
+@media (max-width: 1023px) {
+    .header-logo-image {
+        width: 100px;
+    }
+    .header-navlist {
+        align-items: center;
+        background: #999999;
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        position: fixed;
+        right: -120%;
+        top: 80px;
+        transition: all .6s;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .header-navlist li {
+        margin: 10px 0;
+        z-index: 999;
+    }
+
+    .js-hamburger {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .js-hamburger {
+        opacity: 0;
+    }
+}
+/*========= ボタンのためのCSS ===============*/
+.js-hamburger {
+    cursor: pointer;
+    position: fixed;
+    right: 30px;
+    top: 10px;
+    width: 60px;
+    z-index: 9999;
+}
+
+/*×に変化*/
+.js-hamburger span {
+    background-color: #666666;
+    border-radius: 2px;
+    display: inline-block;
+    height: 3px;
+    left: 10px;
+    position: absolute;
+    transition: all .4s;
+    width: 55%;
+}
+.js-hamburger span:nth-of-type(1) {
+    top: 15px;
+}
+.js-hamburger span:nth-of-type(2) {
+    top: 25px;
+}
+.js-hamburger span:nth-of-type(3) {
+    top: 35px;
+}
+.js-hamburger.is-active span:nth-of-type(1) {
+    left: 18px;
+    top: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 60%;
+}
+.js-hamburger.is-active span:nth-of-type(2) {
+    opacity: 0;
+}
+.js-hamburger.is-active span:nth-of-type(3) {
+    left: 18px;
+    top: 30px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 60%;
+}
